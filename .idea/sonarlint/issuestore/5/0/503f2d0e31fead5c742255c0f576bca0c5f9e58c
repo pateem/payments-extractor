@@ -1,0 +1,17 @@
+
+gsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ÈÝìêúÿÿÿÿ
+T
+squid:S106+"9Replace this use of System.out or System.err by a logger.(’é¨¡ÿÿÿÿÿ
+isquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(˜¨‡©
+Hsquid:S16592",Declare "constantSymbol" on a separate line.(Ú£•Ãûÿÿÿÿ
+bsquid:CommentedOutCodeLinea"<This block of commented-out lines of code should be removed.(Ø„ŽÐ
+T
+squid:S106]"9Replace this use of System.out or System.err by a logger.(…Õúûÿÿÿÿ
+T
+squid:S106/"9Replace this use of System.out or System.err by a logger.(Ëð’Êþÿÿÿÿ
+N
+squid:S106?"9Replace this use of System.out or System.err by a logger.(äÕ½v
+O"squid:SwitchLastCaseIsDefaultCheck5""Add a default case to this switch.(ìúÇV
+Hsquid:S16592",Declare "specificSymbol" on a separate line.(Ú£•Ãûÿÿÿÿ
+Hsquid:S16592",Declare "variableSymbol" on a separate line.(Ú£•Ãûÿÿÿÿ
+isquid:S00117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úâ¹

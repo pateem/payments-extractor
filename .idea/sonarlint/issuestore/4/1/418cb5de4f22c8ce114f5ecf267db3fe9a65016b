@@ -1,0 +1,9 @@
+
+?squid:S1604"(Make this anonymous inner class a lambda(™İ¥
+T
+squid:S106 "9Replace this use of System.out or System.err by a logger.(§¨èşÿÿÿÿ
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(÷‚Ó«
+^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(÷‚Ó«
+O
+squid:S106!"9Replace this use of System.out or System.err by a logger.(›úÂÉ

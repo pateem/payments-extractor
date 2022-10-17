@@ -1,0 +1,32 @@
+
+O
+squid:S106*"9Replace this use of System.out or System.err by a logger.(¯ô¢ô
+gsquid:CommentedOutCodeLineZ"<This block of commented-out lines of code should be removed.(áíüÈùÿÿÿÿ
+]squid:S1854I"ARemove this useless assignment to local variable "threadFactory".(õÏŒøÿÿÿÿ
+Ksquid:S1611("/Remove the parentheses around the "d" parameter(»ÞÝ‹þÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÝÚ¿•üÿÿÿÿ
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Òù°±úÿÿÿÿ
+csquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(ï´¦Ÿ
+Dsquid:S14818"-Remove this unused "executor" local variable.(Ä–Å
+gsquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(âÉž™ÿÿÿÿÿ
+^squid:UselessImportCheck"5Remove this unused import 'java.net.SocketException'.(¼„™€ûÿÿÿÿ
+Nsquid:S1481I"2Remove this unused "threadFactory" local variable.(õÏŒøÿÿÿÿ
+Ssquid:S18548"<Remove this useless assignment to local variable "executor".(Ä–Å
+Asquid:S1181"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+O
+squid:S106 "9Replace this use of System.out or System.err by a logger.(ÿÙå
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(º½Æ…þÿÿÿÿ
+csquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ï´¦Ÿ
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(¡óíÚþÿÿÿÿ
+N
+squid:S106)"9Replace this use of System.out or System.err by a logger.(€À
+T
+squid:S106>"9Replace this use of System.out or System.err by a logger.(§ïó‘ûÿÿÿÿ
+T
+squid:S106/"9Replace this use of System.out or System.err by a logger.(ò±¬”ùÿÿÿÿ
+gsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(ð˜üúÿÿÿÿ
+gsquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(ð˜üúÿÿÿÿ
+csquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(ÔÇ¢
+gsquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(ð˜üúÿÿÿÿ

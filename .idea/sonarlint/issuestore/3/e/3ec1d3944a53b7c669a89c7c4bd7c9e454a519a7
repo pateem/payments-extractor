@@ -1,0 +1,8 @@
+
+3squid:S1643"Use a StringBuilder instead.(îòÂ¶
+isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßŒ»İ
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(ï’³×
+6squid:S1659""Declare "f" on a separate line.(é—
+6squid:S1659""Declare "g" on a separate line.(é—
+isquid:S00117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…Ä 
+8squid:S1643"Use a StringBuilder instead.(õ ­áüÿÿÿÿ
