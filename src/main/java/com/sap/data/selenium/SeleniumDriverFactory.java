@@ -16,7 +16,18 @@ public class SeleniumDriverFactory {
 
     public WebDriver getDriver() {
         String osName = System.getProperty("os.name").toLowerCase();
-        String driverFileName = osName.contains("mac") ? "geckodriver" : "geckodriver.exe";
+        System.out.println(osName);
+        String driverFileName = "";
+        if (osName.contains("mac")) {
+            driverFileName = "geckodriver";
+        } else if (osName.contains("windows")) {
+            driverFileName = "geckodriver.exe";
+        } else if (osName.contains("linux")) {
+            driverFileName = "geckodriver-linux";
+        } else {
+            throw new IllegalStateException("Unsupporeted operating system: " + osName);
+        }
+
         URL firefoxURL = getClass().getClassLoader().getResource("driver" + File.separator + driverFileName);
         try {
             System.setProperty("webdriver.gecko.driver", Paths.get(firefoxURL.toURI()).toFile().getAbsolutePath());
