@@ -1,15 +1,17 @@
 package com.sap.data;
 
+import com.sap.data.mapper.VubBulkPaymentMapper;
 import com.sap.data.model.Payment;
+import com.sap.data.model.VubBulkPaymentRow;
 import com.sap.data.selenium.SeleniumDriverFactory;
 import com.sap.data.selenium.SeleniumTest;
-import com.sap.data.validator.IBANValidator;
-import com.typesafe.config.Config;
-import com.typesafe.config.ConfigFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -36,24 +38,46 @@ public class App {
 
         lines.forEach(line -> {
             line = line.replaceAll("\\s+", " ").trim();
-            if(line.length() > 25) {
+            if (line.length() > 25) {
                 payments.add(extractPaymentDetails(line));
             }
         });
 
         lines.close();
 
+        String filename = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")) + ".txt";
+
+        payments.forEach(payment -> {
+            try (Writer output = new BufferedWriter(
+                    new FileWriter(filename, true))) {
+                VubBulkPaymentRow row = VubBulkPaymentMapper.map("SK0802000000000013424312", payment);
+                StringBuilder line = new StringBuilder(row.type).append(",");
+                line.append(row.dueDate).append(",");
+                line.append(row.senderIban).append(",");
+                line.append(row.recieverIban).append(",");
+                line.append(row.amount).append(",");
+                line.append(row.currency).append(",");
+                line.append(row.reference).append(",");
+                line.append(row.comment).append(System.lineSeparator());
+                output.write(line.toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        });
+
+        System.exit(0);
 
         final SeleniumDriverFactory seleniumDriverFactory = new SeleniumDriverFactory();
         SeleniumTest seleniumTest = new SeleniumTest(seleniumDriverFactory.getDriver());
         seleniumTest.openWebPage(VUB_IB_URL);
         seleniumTest.waitForInput();
 
-        for(Payment payment: payments) {
+        for (Payment payment : payments) {
             logger.info(payment);
             seleniumTest.addPaymentDetails(payment);
             seleniumTest.dummyClick();
-            seleniumTest.clickAddPaymentButton();
+            //seleniumTest.clickAddPaymentButton();
             seleniumTest.waitForInput();
         }
 
@@ -64,16 +88,16 @@ public class App {
 
     public static Payment extractPaymentDetails(String line) {
         int index = 25;
-        String IBAN = line.substring(0,index).replaceAll("\\s+", "");
+        String IBAN = line.substring(0, index).replaceAll("\\s+", "");
 
-        while(IBAN.length() < 24) {
+        while (IBAN.length() < 24) {
             IBAN = (IBAN + line.charAt(index++)).trim();
         }
 
         final String paymentDetailsLine = line.substring(index).trim();
         final Matcher matcher = PAYMENT_DETAILS_PATTERN.matcher(paymentDetailsLine);
 
-        if(matcher.matches()) {
+        if (matcher.matches()) {
 
             final Payment payment = Payment.apply(IBAN,
                     matcher.group(AMOUNT_GROUP),
@@ -87,7 +111,7 @@ public class App {
             System.out.println(payment);
             return payment;
         } else {
-            throw new RuntimeException("No match for line:\n " +  paymentDetailsLine);
+            throw new RuntimeException("No match for line:\n " + paymentDetailsLine);
         }
     }
 }
